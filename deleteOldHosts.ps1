@@ -1,4 +1,8 @@
-﻿Import-Module ActiveDirectory
+# Realizado por: Juan Miranda Cárdenas
+# Correo: juan.miranda.cardenas@gmail.com
+# Fecha: Junio 2018
+
+ Import-Module ActiveDirectory
 
 #Equipos que no se deben eliminar (por el momento) del AD-DC
 $excludeHost = "HOSTNAME1", "HOSTNAME2","ETC"
