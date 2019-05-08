@@ -4,17 +4,17 @@
 
  Import-Module ActiveDirectory
 
-#Equipos que no se deben eliminar (por el momento) del AD-DC
+# Equipos que no se deben eliminar (por el momento) del AD-DC
 $excludeHost = "HOSTNAME1", "HOSTNAME2","ETC"
 
-#AD-DC no entiende el formato de fechas que se usa normalmente (YYYY-MM-DD o similar), sino que el UNIX Timestamp.
+# AD-DC no entiende el formato de fechas que se usa normalmente (YYYY-MM-DD o similar), sino que el UNIX Timestamp.
 # Se debe convertir el output de Get-Date a formato UNIX.
 
 $days = 60 #Dias de antigüedad de los equipos sin conectarse a AD-DC
 $pwdLast = get-date 
 $pwdLast = $pwdLast.AddDays(-$days).ToFileTime() # Se antepone el signo menos (-) a los dias para que reste los dias a la fecha actual.
 
-#Filtro LDAP dentro de los objetos tipo "computer" busca aquellos donde su última actualización de contraeña sea menor igual a 60 dias.
+# Filtro LDAP dentro de los objetos tipo "computer" busca aquellos donde su última actualización de contraeña sea menor igual a 60 dias.
 $hostCollection = Get-ADComputer -LDAPFilter "(objectcategory=computer)(pwdLastSet<=$pwdLast)" 
 
 
