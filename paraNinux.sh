@@ -19,7 +19,7 @@ while read line; do
         find $workingDirectory -type d -name $src -exec mv {} $dst \;
 
         #Para terminar la cosa, uso nuevamente find pero esta vez para comprimir. La diferencia con el find anterior es que este find,
-        #no buscará en más directorios para eso la opción
+        #no buscará en más directorios para eso la opción "-maxdepth"
 
         find $workingDirectory -maxdepth 1 -type d -name $src -exec zip -rm $dst.zip {} \;
 
