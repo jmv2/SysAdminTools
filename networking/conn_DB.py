@@ -10,11 +10,6 @@ dbase = "nombre de la base de datos"
 
 def getTotalDevices():
 	
-	"""		
-			Esta función llama a un procedimiento de alamacenado el cuál consulta a la tabla de 
-			credenciales el total de registros, retorna una tupla donde el elemto 0 contiene el dato.
-	"""
-	
 	conn = MySQLdb.connect(user = username, passwd = password, host = server, db = dbase)
 	cursor = conn.cursor()
 
@@ -32,11 +27,6 @@ def getTotalDevices():
 
 def getCredentials(index):
 
-	"""
-		Este función llama a un procedimiento de almacenado el cuál consulta fila por fila las credenciales.
-		Retona un tupla con los datos
-	"""
-	
 	conn = MySQLdb.connect(user = username, passwd = password, host = server, db = dbase)
 	cursor = conn.cursor()
 	
