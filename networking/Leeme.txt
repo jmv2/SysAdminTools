@@ -1,0 +1,12 @@
+Conector MySQL
+
+sudo apt install python-mysqldb
+yum install MySQL-python
+
+SSH 
+
+pip install pexpect
+
+MySQL Server en ubuntu
+
+sudo apt install mysql-server
