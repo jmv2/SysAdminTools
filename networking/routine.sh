@@ -1,6 +1,6 @@
 #!/bin/bash
 
-currDate=$(date +%d-%m-%Y) #Formato Dia-Mes-Año
+currDate=$(date +%d-%m-%Y)
 
 cd $HOME
 
@@ -10,4 +10,4 @@ python networking/main.py
 
 mv *-confg $currDate
 
-ncftpput -u respaldos -pa51nk0 -R veeamserver.andinadelsud.com /Networking/ $currDate
+ncftpput -u respaldos -pUsuarioFTP -R ServidorRemoto /directorio/ $currDate
