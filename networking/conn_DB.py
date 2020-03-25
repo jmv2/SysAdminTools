@@ -3,10 +3,10 @@
 
 import MySQLdb
 
-username = "soporte"
-password = "s0p0rt3a51nk0"
-server = "daredevil.asinco.cl"
-dbase = "networking"
+username = "username"
+password = "password"
+server = "fqdn o ip"
+dbase = "nombre de la base de datos"
 
 def getTotalDevices():
 	
